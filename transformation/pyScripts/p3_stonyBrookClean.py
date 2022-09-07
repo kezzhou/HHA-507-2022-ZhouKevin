@@ -8,9 +8,12 @@ stonybrook = pd.read_csv('transformation/dataFiles/raw/113243405_StonyBrookUnive
 columnNames = list(stonybrook)
 
 idVars = columnNames[:8] # this is identify the key variables that we want to keep to designate what is the lowest unit of each row
-valueVars = columnNames[8:] #these are the identical variables that we want to 'stack' 
+valueVars = columnNames[8:] #these are the idential variables that we want to 'stack' 
 
 ## transofmring with the melt function from a wide dataframe to a stacked dataframe
 stonybrook_modified = stonybrook.melt(id_vars=idVars, value_vars=valueVars)
 
-stonybrook_modified.to_csv('transformation/dataFiles/clean/stonybrook_clean.csv')
+print(stonybrook_modified.head(50))
+
+stonybrook_modified.to_csv('transformation/dataFiles/clean/113243405_StonyBrookUniversityHospital_standardcharges_clean.csv')
+stonybrook_modified.shape
