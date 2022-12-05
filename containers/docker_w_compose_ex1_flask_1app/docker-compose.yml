@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+
+  flasksimpleapp:
+    build: ./app
+    ports:
+      - "5050:5001"
+    volumes:
+      - ./app:/code
